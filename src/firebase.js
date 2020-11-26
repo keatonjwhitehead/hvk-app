@@ -1,16 +1,16 @@
-import * as firebase from 'firebase/app'
+import firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
 
-// firebase init - add your own config here
+// firebase init
 const firebaseConfig = {
-  apiKey: "AIzaSyD0vOS5_-pCdY5IpCq-XqTFavqcnTs49C0",
-  authDomain: "hiddenvalleykings-a6ead.firebaseapp.com",
-  databaseURL: "https://hiddenvalleykings-a6ead.firebaseio.com",
-  projectId: "hiddenvalleykings-a6ead",
-  storageBucket: "hiddenvalleykings-a6ead.appspot.com",
-  messagingSenderId: "827809100083",
-  appId: "1:827809100083:web:6c0ec72d013ce99d078e46"
+  apiKey: 'AIzaSyD0vOS5_-pCdY5IpCq-XqTFavqcnTs49C0',
+  authDomain: 'hiddenvalleykings-a6ead.firebaseapp.com',
+  databaseURL: 'https://hiddenvalleykings-a6ead.firebaseio.com',
+  projectId: 'hiddenvalleykings-a6ead',
+  storageBucket: 'hiddenvalleykings-a6ead.appspot.com',
+  messagingSenderId: '827809100083',
+  appId: '1:827809100083:web:12c5d9b1198d61d7078e46'
 }
 firebase.initializeApp(firebaseConfig)
 

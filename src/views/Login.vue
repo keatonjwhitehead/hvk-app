@@ -1,5 +1,7 @@
 <template>
   <div id="login">
+     <!-- Password reset module -->
+    <PasswordReset v-if="showPasswordReset" @close="togglePasswordReset()"></PasswordReset>
     <section>
       <div class="col1">
         <h1>Hidden Valley Kings</h1>
@@ -19,14 +21,14 @@
           <button @click="login()" class="button">Log In</button>
           <div class="extras">
             <a>Forgot Password</a>
-            <a @click="toggleForm()">Create an Account</a>
+            <a @click="toggleForm ()">Create an Account</a>
           </div>
         </form>
         <form v-else @submit.prevent>
           <h1>Get Started</h1>
           <div>
             <label for="name">Name</label>
-            <input v-model.trim="signupForm.name" type="text" placeholder="Savvy Apps" id="name" />
+            <input v-model.trim="signupForm.name" type="text" placeholder="Name" id="name" />
           </div>
           <div>
             <label for="title">Title</label>
@@ -42,7 +44,11 @@
           </div>
           <button @click="signup()" class="button">Sign Up</button>
           <div class="extras">
-            <a @click="toggleForm()">Back to Log In</a>
+            <a @click="toggleForm()"> Back to Log In </a>
+
+          </div>
+          <div class="extras">
+            <a @click="togglePasswordReset()"> Forgot Password </a>
           </div>
         </form>
       </div>
@@ -51,7 +57,11 @@
 </template>
 
 <script>
+import PasswordReset from '@/components/PasswordReset'
 export default {
+  components: {
+    PasswordReset
+  },
   data () {
     return {
       loginForm: {
@@ -64,7 +74,8 @@ export default {
         email: '',
         password: ''
       },
-      showLoginForm: true
+      showPasswordReset: false,
+      showLoginForm: false
     }
   },
   methods: {
@@ -73,18 +84,22 @@ export default {
         email: this.loginForm.email,
         password: this.loginForm.password
       })
+    },
+    signup () {
+      this.$store.dispatch('signup', {
+        email: this.signupForm.email,
+        password: this.signupForm.password,
+        name: this.signupForm.name,
+        title: this.signupForm.title
+      })
+    },
+    toggleForm () {
+      this.showLoginForm = !this.showLoginForm
+    },
+    togglePasswordReset () {
+      this.showPasswordReset = !this.showPasswordReset
     }
-  },
-  signup () {
-    this.$store.dispatch('signup', {
-      email: this.signupForm.email,
-      password: this.signupForm.password,
-      name: this.signupForm.name,
-      title: this.signupForm.title
-    })
-  },
-  toggleForm () {
-    this.showLoginForm = !this.showLoginForm
   }
+
 }
 </script>

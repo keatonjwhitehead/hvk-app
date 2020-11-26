@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1> TRUMP 2020</h1>
+    <h1>Welcome to Hidden Valley Kings!</h1>
   </div>
 </template>
 
