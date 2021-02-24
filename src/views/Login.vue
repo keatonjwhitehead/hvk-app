@@ -7,7 +7,9 @@
         <h1>Hidden Valley Kings</h1>
         <p>Welcome to the <a href="https://hiddenvalleykings.com" target="_blank">Hidden Valley Kings</a> social media web app powered by Vue.js and Firebase.</p>
       </div>
+
       <div :class="{'signup-form': !showLoginForm }" class="col2">
+        <!-- v-if where if the showLoginForm is true will show the Login form otherwise it will show the sign up form-->
         <form v-if="showLoginForm" @submit.prevent>
           <h1>Welcome Back</h1>
           <div>
@@ -18,12 +20,13 @@
             <label for="password1">Password</label>
             <input v-model.trim="loginForm.password" type="password" placeholder="******" id="password1" />
           </div>
-          <button @click="login()" class="button">Log In</button>
+          <button @click="login()" class="button"> Log In </button>
           <div class="extras">
-            <a>Forgot Password</a>
+            <a @click="togglePasswordReset()">Forgot Password</a>
             <a @click="toggleForm ()">Create an Account</a>
           </div>
         </form>
+        <!-- If the showLoginForm is flase show the sign up form -->
         <form v-else @submit.prevent>
           <h1>Get Started</h1>
           <div>
@@ -44,11 +47,8 @@
           </div>
           <button @click="signup()" class="button">Sign Up</button>
           <div class="extras">
-            <a @click="toggleForm()"> Back to Log In </a>
-
-          </div>
-          <div class="extras">
-            <a @click="togglePasswordReset()"> Forgot Password </a>
+            <a @click="togglePasswordReset()">Forgot Password</a>
+            <a @click="toggleForm ()">Create an Account</a>
           </div>
         </form>
       </div>
@@ -75,7 +75,7 @@ export default {
         password: ''
       },
       showPasswordReset: false,
-      showLoginForm: false
+      showLoginForm: true
     }
   },
   methods: {
