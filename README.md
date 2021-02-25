@@ -1,7 +1,7 @@
 # HVK
 Hidden Valley Kings is a social platform where people can come together to learn, share, and practice real world solutions to their problems that are backed by science and experience.
 
-#Things I learned from this project
+## Things I learned from this project
 - Start a production-ready project using Vue CLI.
 - Manage state for the app using Vuex. You'll also understand why a central store is important for building large-scale apps.
 - Maintain reactivity within your app by utilizing built-in Vuex features.
@@ -11,7 +11,7 @@ Hidden Valley Kings is a social platform where people can come together to learn
 - Leverage components, one of the more powerful features of Vue.js.
 - Familiarize myself with core Vue.js concepts.
 
-#Initial Setup With Vue CLI
+## Initial Setup With Vue CLI
 For your reference, please see the Vue CLI documentation. Follow these steps to install and initialize via Vue CLI 3:
 
 Step 1: Install Vue CLI 3.
