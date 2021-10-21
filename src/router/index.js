@@ -26,6 +26,14 @@ const routes = [
     meta: {
       requiresAuth: true
     }
+  },
+  {
+    path: '/kingdom',
+    name: 'kingdom',
+    component: () => import(/* webpackChunkName: "Kingdom" */ '../views/Kingdom.vue'),
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 
